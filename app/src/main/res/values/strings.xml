@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name"></string>
+    <string-array name="city">
+        <item>Udaipur</item>
+        <item>Jaipur</item>
+        <item>Jodhpur</item>
+        <item>Chittorgarh</item>
+        <item>Delhi</item>
+        <item>Agra</item>
+
+    </string-array>
+    <string-array name="Cartype">
+        <item>2 seater</item>
+        <item>5 seater</item>
+        <item>7 seater</item>
+        <item>9 seater</item>
+    </string-array>
+
+    <string-array name="FuelType">
+        <item>Petrol</item>
+        <item>Diesel</item>
+    </string-array>
+
+</resources>

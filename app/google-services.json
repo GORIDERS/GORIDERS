@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "436709349686",
+    "firebase_url": "https://goapp-8f1d4.firebaseio.com",
+    "project_id": "goapp-8f1d4",
+    "storage_bucket": "goapp-8f1d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436709349686:android:72b7083b3deede40b17b97",
+        "android_client_info": {
+          "package_name": "com.example.goapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436709349686-oistkaihmddp21b3c33ejf1v0joqll30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALZCUGtU5TIrazZVw9Ldp9-3a70UMPI-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436709349686-oistkaihmddp21b3c33ejf1v0joqll30.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
