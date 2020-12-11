@@ -1,11 +1,17 @@
 package com.example.goapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
 
 public class BookingsPage extends AppCompatActivity {
 private ImageView eaplogo;
@@ -25,4 +31,6 @@ private TextView emarutitxt;
         eupcomingbtn = findViewById(R.id.eupcomingbtn);
         emarutitxt = findViewById(R.id.eswifttxt);
     }
+
+
 }
