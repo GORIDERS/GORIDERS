@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true"
     tools:context=".Homepage"
     tools:openDrawer="start">
 
@@ -15,31 +14,8 @@
         android:layout_height="match_parent"
         android:background="@color/colorBackground">
 
-
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorBackground"
-                android:elevation="4dp"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-            <FrameLayout
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-
-
-
+        <include
+            layout="@layout/main_toolbar"/>
 
 
 
@@ -74,10 +50,9 @@
 
         <Spinner
             android:id="@+id/spcity"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
+            android:layout_width="78dp"
+            android:layout_height="22dp"
             android:entries="@array/city"
-            android:hint="Select"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.854"
@@ -87,8 +62,8 @@
 
         <Spinner
             android:id="@+id/spcar"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
+            android:layout_width="78dp"
+            android:layout_height="22dp"
             android:entries="@array/Cartype"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -130,8 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-
-            android:textSize="10dp"
+            android:textSize="9dp"
             android:typeface="serif"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -145,8 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-
-            android:textSize="10dp"
+            android:textSize="9dp"
             android:typeface="serif"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -247,14 +220,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.491" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+
+    <RelativeLayout
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:headerLayout="@layout/navigation_head"
-        app:menu="@menu/drawer_menu"
-        tools:ignore="MissingConstraints" />
+        android:background="@android:color/white">
+
+
+        <include
+            layout="@layout/main_nav_drawer"/>
+    </RelativeLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -10,7 +10,7 @@
 
     </string-array>
     <string-array name="Cartype">
-        <item>2 seater</item>
+        <item>4 seater</item>
         <item>5 seater</item>
         <item>7 seater</item>
         <item>9 seater</item>
@@ -21,7 +21,6 @@
         <item>Diesel</item>
     </string-array>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
 </resources>

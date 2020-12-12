@@ -1,6 +1,7 @@
 package com.example.goapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CartypePage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    //DrawerLayout drawerLayout;
 private Button ebutton1;
 private TextView efuel;
 private TextView ecar;
@@ -27,6 +29,9 @@ private ImageView eapplogo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cartype_page);
+
+        //drawerLayout = findViewById(R.id.drawer_layout);
+
         efuel = findViewById(R.id.efueltp);
         ecar = findViewById(R.id.ecartype);
         eswift = findViewById(R.id.eswift5);
@@ -67,4 +72,30 @@ private ImageView eapplogo;
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    /*public void ClickMenu(View view){
+        Homepage.openDrawer(drawerLayout);
+    }
+
+    public void ClickLogo(View view){
+        Homepage.closeDrawer(drawerLayout);
+    }
+
+    public void ClickHome(View view){
+        Homepage.redirectActivity(this,Homepage.class);
+    }
+
+    public void ClickBookings(View view){
+        Homepage.redirectActivity(this,BookingsPage.class);
+    }
+
+    public void ClickLogout(View view){
+        Homepage.logout(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Homepage.closeDrawer(drawerLayout);
+    }*/
 }

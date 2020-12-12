@@ -1,6 +1,7 @@
 package com.example.goapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CheckoutPage extends AppCompatActivity {
+    //DrawerLayout drawerLayout;
 private Button pay;
 private Button ecoupon;
 private ImageView egreen;
@@ -27,6 +29,8 @@ private TextView echeckout;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_page);
+
+        //drawerLayout = findViewById(R.id.drawer_layout);
 
         ecoupon = findViewById(R.id.ecoupon);
         elogo = findViewById(R.id.elogo);
@@ -52,4 +56,29 @@ private TextView echeckout;
         });
 
     }
+    /*public void ClickMenu(View view){
+        Homepage.openDrawer(drawerLayout);
+    }
+
+    public void ClickLogo(View view){
+        Homepage.closeDrawer(drawerLayout);
+    }
+
+    public void ClickHome(View view){
+        Homepage.redirectActivity(this,Homepage.class);
+    }
+
+    public void ClickBookings(View view){
+        Homepage.redirectActivity(this,BookingsPage.class);
+    }
+
+    public void ClickLogout(View view){
+        Homepage.logout(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Homepage.closeDrawer(drawerLayout);
+    }*/
 }

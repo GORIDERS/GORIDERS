@@ -1,6 +1,6 @@
 package com.example.goapp;
 
-import androidx.annotation.NonNull;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,18 +9,19 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.Spinner;
@@ -34,9 +35,9 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.Calendar;
 
-public class Homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
+public class Homepage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private DrawerLayout drawer;
+     DrawerLayout drawer;
 
     private Switch switch_btn;
     private TextView ehed;
@@ -67,21 +68,17 @@ public class Homepage extends AppCompatActivity implements AdapterView.OnItemSel
 
         setContentView(R.layout.activity_homepage);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+       // NavigationView navigationView = findViewById(R.id.nav_view);
+        //navigationView.setNavigationItemSelectedListener(this);
+       // ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,
+                //R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        //drawer.addDrawerListener(toggle);
+       // toggle.syncState();
 
-        if(savedInstanceState == null){
-          getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
-            navigationView.setCheckedItem(R.id.nav_home);
-        }
+
 
         ehed = findViewById(R.id.ehead);
         estart = findViewById(R.id.eStartDatetxt);
@@ -289,31 +286,65 @@ public class Homepage extends AppCompatActivity implements AdapterView.OnItemSel
 
     }
 
-    @Override
-    public void onBackPressed() {
-        if(drawer.isDrawerOpen(GravityCompat.START))
-        {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+  public void ClickMenu(View view){
+        openDrawer(drawer);
+  }
 
+    public static void openDrawer(DrawerLayout drawer) {
+        drawer.openDrawer(GravityCompat.START);
+    }
+    public void ClickLogo(View view){
+        closeDrawer(drawer);
+    }
+
+    public static void closeDrawer(DrawerLayout drawer) {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void ClickHome(View view){
+        recreate();
+    }
+
+    public void ClickBookings(View view){
+        redirectActivity(this,BookingsPage.class);
+    }
+
+    public static void redirectActivity(Activity activity,Class aClass) {
+        Intent intent = new Intent(activity, aClass);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+    }
+
+    public void ClickLogout(View view){
+        logout(this);
+    }
+
+    public static void logout(final Activity activity) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("Logout");
+        builder.setMessage("Are you sure you want to logout ?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                activity.finishAffinity();
+                System.exit(0);
+            }
+        });
+
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch(item.getItemId()){
-            case R.id.nav_bookings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Bookings()).commit();
-            break;
-           // case R.id.nav_home:
-             //   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
-               // break;
-            case R.id.nav_contactus:
-                Toast.makeText(this,"Contact here : 0142225480 , gmail : goriders@gmail.com",Toast.LENGTH_SHORT).show();
-                break;
-        }
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+    protected void onPause() {
+        super.onPause();
+        closeDrawer(drawer);
     }
 }

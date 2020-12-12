@@ -4,32 +4,65 @@ package com.example.goapp;
 import android.os.Bundle;
 
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.drawerlayout.widget.DrawerLayout;
 
 
 public class BookingsPage extends AppCompatActivity {
-private ImageView eaplogo;
-private ImageView emaruti;
-private Button epastbtn;
+    DrawerLayout drawerLayout;
+    public ImageView emaruti;
+
+/*private Button epastbtn;
 private Button epresentbtn;
-private Button eupcomingbtn;
-private TextView emarutitxt;
+private Button eupcomingbtn;*/
+
+    public TextView emarutitxt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookings_page);
-        eaplogo = findViewById(R.id.eapplogo);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        ImageView eaplogo = findViewById(R.id.eapplogo);
         emaruti = findViewById(R.id.eswift5);
-        epastbtn = findViewById(R.id.epastbutton);
+
+        /*epastbtn = findViewById(R.id.epastbutton);
         epresentbtn = findViewById(R.id.epresentbutton);
-        eupcomingbtn = findViewById(R.id.eupcomingbtn);
+        eupcomingbtn = findViewById(R.id.eupcomingbtn);*/
+
         emarutitxt = findViewById(R.id.eswifttxt);
+    }
+    public void ClickMenu(View view){
+    Homepage.openDrawer(drawerLayout);
+    }
+
+    public void ClickLogo(View view){
+        Homepage.closeDrawer(drawerLayout);
+    }
+
+    public void ClickHome(View view){
+        Homepage.redirectActivity(this,Homepage.class);
+    }
+
+    public void ClickBookings(View view){
+      recreate();
+    }
+
+    public void ClickLogout(View view){
+        Homepage.logout(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Homepage.closeDrawer(drawerLayout);
     }
 
 

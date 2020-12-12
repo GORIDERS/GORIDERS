@@ -13,9 +13,7 @@
         <activity android:name=".CheckoutPage" />
         <activity android:name=".CartypePage" />
         <activity android:name=".BookingsPage" />
-        <activity android:name=".Menupage" />
-        <activity android:name=".Homepage"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Homepage" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
