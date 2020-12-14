@@ -1,9 +1,11 @@
 package com.example.goapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +25,7 @@ private Button epresentbtn;
 private Button eupcomingbtn;*/
 
     public TextView emarutitxt;
+    TextView etrupe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,15 @@ private Button eupcomingbtn;*/
 
         ImageView eaplogo = findViewById(R.id.eapplogo);
         emaruti = findViewById(R.id.eswift5);
+        etrupe = findViewById(R.id.etrupe);
+        /*Intent intent=getIntent();
+        String name=intent.getStringExtra("name");
+        String Price=intent.getStringExtra("price");
+        int image=intent.getIntExtra("image",0);
+        etrupe.setText(Price);
+        emaruti.setImageResource(image);
+        emarutitxt.setText(name);
+        Log.d("name",name+ " "+Price);*/
 
         /*epastbtn = findViewById(R.id.epastbutton);
         epresentbtn = findViewById(R.id.epresentbutton);

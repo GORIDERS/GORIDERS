@@ -2,6 +2,8 @@ package com.example.goapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +16,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CartypePage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    RecyclerView recyclerView;
+    Button upload;
+    RecycleClass recycleClass;
+    List<RecycleClass> recycleClassesList;
+    RecyclerAdapter recyclerAdapter;
     //DrawerLayout drawerLayout;
 private Button ebutton1;
 private TextView efuel;
@@ -31,7 +41,7 @@ private ImageView eapplogo;
         setContentView(R.layout.activity_cartype_page);
 
         //drawerLayout = findViewById(R.id.drawer_layout);
-
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         efuel = findViewById(R.id.efueltp);
         ecar = findViewById(R.id.ecartype);
         eswift = findViewById(R.id.eswift5);
@@ -59,7 +69,21 @@ private ImageView eapplogo;
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recycleClassesList=new ArrayList<>();
+        recycleClassesList.add(new RecycleClass(R.drawable.ma,"Mahindra Xuv 300","2500"));
+        recycleClassesList.add(new RecycleClass(R.drawable.tata,"Mahindra marazzo tr","3500"));
+        recycleClassesList.add(new RecycleClass(R.drawable.maruti_alto,"Maruti Suzuki Alto","1500"));
+        recycleClassesList.add(new RecycleClass(R.drawable.ttata_tiago,"Tata Tiago","3000"));
+        recycleClassesList.add(new RecycleClass(R.drawable.maruti_ertiga,"Maruti Ertiga","4500"));
+        recycleClassesList.add(new RecycleClass(R.drawable.suzuki_swift,"Maruti Suzuki Swift","2500"));
+        recycleClassesList.add(new RecycleClass(R.drawable.tata_nexon,"Tata Nexon","4000"));
+
+        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(recycleClassesList,this);
+        recyclerView.setAdapter(recyclerAdapter);
     }
+
 
 
     @Override

@@ -3,21 +3,26 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/gradientbg1"
+
+    >
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_width="369dp"
+        android:layout_height="174dp"
         android:layout_margin="16dp"
+
         android:onClick="ClickLogo"
-        android:src="@drawable/goriderlg"/>
+
+        android:src="@drawable/goriderlg" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#636363"/>
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,20 +30,23 @@
         android:gravity="center_vertical"
         android:onClick="ClickHome">
 
+
+
         <TextView
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="HOME"
+            android:text="Home"
             android:padding="12dp"
             android:typeface="serif"
             android:textColor="@android:color/black"
             android:layout_marginLeft="16dp" />
-        <ImageView
+
+            <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_home"
-            android:layout_marginRight="48dp" />
+        android:layout_marginRight="48dp" />
 
     </LinearLayout>
 
@@ -53,7 +61,7 @@
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="BOOKINGS"
+            android:text="Bookings"
             android:padding="12dp"
             android:typeface="serif"
             android:textColor="@android:color/black"
@@ -79,7 +87,7 @@
             android:layout_marginLeft="16dp"
             android:layout_weight="1"
             android:padding="12dp"
-            android:text="LOGOUT"
+            android:text="Log Out"
 
             android:textColor="@android:color/black"
             android:typeface="serif" />

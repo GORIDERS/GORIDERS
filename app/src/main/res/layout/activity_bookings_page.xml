@@ -9,14 +9,12 @@ android:id="@+id/drawer_layout"
     tools:context=".BookingsPage">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradientbg">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradientbg">
-
-    <include
-        layout="@layout/main_toolbar"/>
+        <include layout="@layout/main_toolbar" />
 
         <TextView
             android:layout_width="match_parent"
@@ -50,28 +48,38 @@ android:id="@+id/drawer_layout"
             android:layout_height="142dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.594"
-            app:srcCompat="@drawable/images_big2_pro_swift_zoom_1_617x435" />
+            app:layout_constraintVertical_bias="0.387"
+            android:src="@drawable/tata_nexon"/>
 
         <TextView
             android:id="@+id/eswifttxt"
-            android:layout_width="196dp"
-            android:layout_height="141dp"
-            android:layout_marginBottom="220dp"
+            android:layout_width="156dp"
+            android:layout_height="88dp"
             android:gravity="center_horizontal"
-            android:text="Maruti Suzuki          5 seater
-Booking- 17/05/2020"
+            android:text="Tata Nexon Diesel 5 seater                            Udaipur 7:00 pm                19 December "
             android:textAlignment="center"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/eswift5"
+            app:layout_constraintHorizontal_bias="0.544"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.569" />
 
-            app:layout_constraintVertical_bias="0.33" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/etrupe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.646" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"

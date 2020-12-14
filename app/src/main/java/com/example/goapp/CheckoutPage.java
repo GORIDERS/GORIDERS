@@ -5,6 +5,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,6 +45,14 @@ private TextView echeckout;
         emahindratxt = findViewById(R.id.emahindratxt);
         echeckout = findViewById(R.id.echecktext);
 
+        Intent intent=getIntent();
+        String name=intent.getStringExtra("name");
+        String Price=intent.getStringExtra("price");
+        int image=intent.getIntExtra("image",0);
+        erupee.setText(Price);
+        emahindra.setImageResource(image);
+        emahindratxt.setText(name);
+        Log.d("name",name+ " "+Price);
 
 
         pay = findViewById(R.id.epay);
