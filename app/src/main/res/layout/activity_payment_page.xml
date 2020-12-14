@@ -37,18 +37,19 @@
 
     <TextView
         android:id="@+id/erptxt"
-        android:layout_width="381dp"
-        android:layout_height="95dp"
-        android:text="₹2500
-                                                                Sun, 06 Sep'20, 10:00pm-Mon, 07 Sep'20, 07:00pm"
+        android:layout_width="361dp"
+        android:layout_height="81dp"
+        android:gravity="center_horizontal"
+        android:text="     ₹4000
+
+                                                                   Sat, 19 Dec'20, 7:00pm - Sun,20 Sep'20, 07:00pm"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/elogo1"
-        app:layout_constraintVertical_bias="0.32"
-        android:gravity="center_horizontal" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <Button
         android:id="@+id/eatm"
